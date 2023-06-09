@@ -7,7 +7,7 @@ This reository contains the solutions to the various tasks on argc (argument cou
 Write a program that prints its name, followed by a new line.
 
     - If you rename the program, it will print the new name, without having to compile it again
-    -You should not remove the path before the name of the program
+    - You should not remove the path before the name of the program
 
 ```shell
 julien@ubuntu:~/0x0A. argc, argv$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-whatsmyname.c -o mynameis
@@ -20,13 +20,15 @@ julien@ubuntu:~/0x0A. argc, argv$
 ```
 Repo:
 
-    - GitHub repository: alx-low_level_programming
+    - GitHub repository: **alx-low_level_programming**
     - Directory: 0x0A-argc_argv
     - File: 0-whatsmyname.c
 
 ## 1. Silence is argument carried out by other means
 Write a program that prints the number of arguments passed into it.
+
     - Your program should print a number, followed by a new line
+  
 ```shell
 julien@ubuntu:~/0x0A. argc, argv$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-args.c -o nargs
 julien@ubuntu:~/0x0A. argc, argv$ ./nargs 
@@ -40,12 +42,14 @@ julien@ubuntu:~/0x0A. argc, argv$ ./nargs hello, world
 julien@ubuntu:~/0x0A. argc, argv$ 
 ```
 Repo:
+
     - GitHub repository: alx-low_level_programming
     - Directory: 0x0A-argc_argv
     - File: 1-args.c
 
 ## 2. The best argument against democracy is a five-minute conversation with the average voter
 Write a program that prints all arguments it receives.
+    
     - All arguments should be printed, including the first one
     - Only print one argument per line, ending with a new line
 ```shell
@@ -66,6 +70,7 @@ julien@ubuntu:~/0x0A. argc, argv$
 
 ## 3. Neither irony nor sarcasm is argument
 Write a program that multiplies two numbers.
+    
     - Your program should print the result of the multiplication, followed by a new line
     - You can assume that the two numbers and result of the multiplication can be stored in an integer
     - If the program does not receive two arguments, your program should print Error, followed by a new line, and return 1
@@ -84,12 +89,14 @@ Error
 julien@ubuntu:~/0x0A. argc, argv$ 
 ```
 Repo:
+    
     - GitHub repository: alx-low_level_programming
     - Directory: 0x0A-argc_argv
     - File: 3-mul.c
 
 ## 4. To infinity and beyond
 Write a program that adds positive numbers.
+    
     - Print the result, followed by a new line
     - If no number is passed to the program, print 0, followed by a new line
     - If one of the number contains symbols that are not digits, print Error, followed by a new line, and return 1
@@ -107,12 +114,14 @@ julien@ubuntu:~/0x0A. argc, argv$ ./add
 julien@ubuntu:~/0x0A. argc, argv$ 
 ```
 Repo:
+    
     - GitHub repository: alx-low_level_programming
     - Directory: 0x0A-argc_argv
     - File: 4-add.c
 
 ## 5. Minimal Number of Coins for Change
 Write a program that prints the minimum number of coins to make change for an amount of money.
+    
     - Usage: ./change cents
     - where cents is the amount of cents you need to give back
     - if the number of arguments passed to your program is not exactly 1, print Error, followed by a new line, and return 1
@@ -134,6 +143,7 @@ julien@ubuntu:~/0x0A. argc, argv$ ./change 13
 julien@ubuntu:~/0x0A. argc, argv$ 
 ```
 Repo:
+    
     - GitHub repository: **alx-low_level_programming**
     - Directory: **0x0A-argc_argv**
     - File: **100-change.c**
