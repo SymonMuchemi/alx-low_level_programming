@@ -1,8 +1,8 @@
 # alx-low_level_programming
 ALx-SE Cohort 15 projects and Tasks.
 ## Projects
-[0x08. C - Recursion](https://github.com/Simon-Muchemi/alx-low_level_programming/tree/main/0x08-recursion)
-[0x0A-Argc_argv](https://github.com/Simon-Muchemi/alx-low_level_programming/tree/main/0x0A-argc_argv)
+1. [0x08. C - Recursion](https://github.com/Simon-Muchemi/alx-low_level_programming/tree/main/0x08-recursion)
+2. [0x0A-Argc_argv](https://github.com/Simon-Muchemi/alx-low_level_programming/tree/main/0x0A-argc_argv)
 ## Cloning the Repository
 To clone this repo, run the following command:
 ```shell
