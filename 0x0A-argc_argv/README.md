@@ -20,7 +20,7 @@ julien@ubuntu:~/0x0A. argc, argv$
 ```
 Repo:
 
-    - GitHub repository: **alx-low_level_programming**
+    - GitHub repository: alx-low_level_programming
     - Directory: 0x0A-argc_argv
     - File: 0-whatsmyname.c
 
@@ -144,6 +144,6 @@ julien@ubuntu:~/0x0A. argc, argv$
 ```
 Repo:
     
-    - GitHub repository: **alx-low_level_programming**
-    - Directory: **0x0A-argc_argv**
-    - File: **100-change.c**
+    - GitHub repository: alx-low_level_programming
+    - Directory: 0x0A-argc_argv
+    - File: 100-change.c
