@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 {
     char *result_string;
     int index;
-    int size = _str_len(s1) + _str_len(s2) + 1;
+    int size;
     int concat_index = 0;
     
     if (s1 == NULL)
@@ -31,6 +31,8 @@ char *str_concat(char *s1, char *s2)
 
 	if (s2 == NULL)
 		s2 = "";
+    
+    size = _str_len(s1) + _str_len(s2) + 1;
 
     result_string = malloc(size);
     if (result_string == NULL)
