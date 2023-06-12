@@ -30,20 +30,18 @@ char *_strdup(char *str)
     if (str == NULL)
         return (NULL);
     
-    else
+    new_string = malloc(str_length + 1);
+
+    if (new_string == NULL)
     {
-        new_string = malloc(str_length + 1);
-
-        if (new_string == NULL)
-        {
-            return (NULL);
-        }
-
-        for (i = 0; i < str_length; i++)
-        {
-            new_string[i] = str[i];
-        }
-        new_string[i] = '\0';
+        return (NULL);
     }
+
+    for (i = 0; i < str_length; i++)
+    {
+        new_string[i] = str[i];
+    }
+    new_string[i] = '\0';
+    
     return (new_string);
 }
