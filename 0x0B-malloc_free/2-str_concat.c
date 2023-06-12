@@ -1,4 +1,19 @@
 #include "main.h"
+#include "main.h"
+/**
+ * _str_len(char *s) - function defination
+ * @s: pointer to a string
+ * Description: Compute the length of a string
+ * Return: size of string
+*/
+int _str_len(char *s)
+{
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	return (1 + _str_len(s + 1));
+}
 /**
  * *str_concat(char *s1, char *s2) - concatenates two strings
  * @s1: first string
@@ -8,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 {
     char *result_string;
     int index;
-    int size = _strlen(s1) + _strlen(s2) + 1;
+    int size = _str_len(s1) + _str_len(s2) + 1;
     int concat_index = 0;
     
     if (s1 == NULL)
@@ -16,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (s2 == NULL)
 		s2 = "";
-        
+
     result_string = malloc(size);
     if (result_string == NULL)
         return (NULL);
