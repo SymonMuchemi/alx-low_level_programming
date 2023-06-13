@@ -1,5 +1,4 @@
 #include "main.h"
-#include "main.h"
 /**
  * _str_len(char *s) - function defination
  * @s: pointer to a string
@@ -32,17 +31,17 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
     
-    size = _str_len(s1) + _str_len(s2) + 1;
+  size = _str_len(s1) + _str_len(s2) + 1;
 
-    result_string = malloc(size);
-    if (result_string == NULL)
-        return (NULL);
-    
-    for (index = 0; s1[index]; index++)
-		result_string[concat_index++] = s1[index];
+  result_string = malloc(size);
+  if (result_string == NULL)
+      return (NULL);
+  
+  for (index = 0; s1[index]; index++)
+  result_string[concat_index++] = s1[index];
 
-	for (index = 0; s2[index]; index++)
-		result_string[concat_index++] = s2[index];
-    
-    return (result_string);    
+  for (index = 0; s2[index]; index++)
+  result_string[concat_index++] = s2[index];
+  
+  return (result_string);    
 }
