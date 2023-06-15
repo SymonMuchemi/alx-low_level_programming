@@ -23,10 +23,19 @@ int _str_len(char *s)
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-    unsigned int s1_len = _str_len(s1);
-    unsigned int s2_len = _str_len(s2);
+    unsigned int s1_len;
+    unsigned int s2_len;
     unsigned int final_str_size, i, j;
     char *final_str;
+
+    if (s1 == NULL)
+        s1 = "";
+    
+    if (s2 == NULL)
+        s2 = "";
+
+    s1_len = _str_len(s1);
+    s2_len = _str_len(s2);
 
     if (n >= s2_len)
         n = s2_len;
