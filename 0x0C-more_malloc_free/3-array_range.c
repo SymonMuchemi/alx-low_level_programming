@@ -7,24 +7,23 @@
 */
 int *array_range(int min, int max)
 {
-    int size, i, j = 0;
-    int *array;
+	int size, i, j = 0;
+	int *array;
 
-    if (min > max)
-        return (NULL);
-    
-    size = max - min + 1;
+	if (min > max)
+		return (NULL);
 
-    array = malloc(sizeof(int) * size);
-    if (array == NULL)
-        return (NULL);
-    
-    /*Initialize elements*/
-    for (i = min; i <= max; i++)
-    {
-        array[j] = i;
-        j++;
-    }
+	size = max - min + 1;
+	array = malloc(sizeof(int) * size);
+	if (array == NULL)
+		return (NULL);
 
-    return (array);
+	/*Initialize elements*/
+	for (i = min; i <= max; i++)
+	{
+		array[j] = i;
+		j++;
+	}
+
+	return (array);
 }
