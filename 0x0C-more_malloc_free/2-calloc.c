@@ -15,11 +15,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
         return (NULL);
     
     mem_location = malloc(nmemb * size);
-    ptr = (unsigned char *)mem_location;
     if (mem_location == NULL)
         return (NULL);
     
-    for (i = 0; i < nmemb; i++)
+    ptr = (unsigned char *)mem_location;
+
+    for (i = 0; i < nmemb * size; i++)
         ptr[i] = 0;
     
     return (mem_location);
