@@ -4,6 +4,6 @@
  * ABS(x) - computes the absolute value of a variable
  * @x: the variable
 */
-#define ABS(x) ((x) < (0)? (-x) : (x))
+#define ABS(x) ((x) < (0) ? (-x) : (x))
 
 #endif
