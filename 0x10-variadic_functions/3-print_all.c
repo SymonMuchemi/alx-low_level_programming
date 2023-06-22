@@ -20,22 +20,29 @@ void print_all(const char * const format, ...)
     {
          if (format[i] == 'c')
         {
-            c = va_arg(args, char); /*Check*/
+            c = va_arg(args, int); /*Check*/
             printf("%c", c);
         }
-    else if (format[i] == 'i')
+        else if (format[i] == 'i')
         {
             num = va_arg(args, int);
             printf("%d", num);
         }
-    else if (format[i] == 'f')
+        else if (format[i] == 'f')
         {
-            
+            fnum = va_arg(args, double);
+            printf("%f", fnum);
         }
-    else if (format[i] == 's')
-    {
-        /* Handle string argument */
-    }
+        else if (format[i] == 's')
+        {
+            str = va_arg(args, char *);
+            if (str == NULL)
+                printf("%s", nil);
+            else
+                printf("%s", str);
+        }
         i++;
     }
+    va_end(args);
+    printf("\n");
 }
