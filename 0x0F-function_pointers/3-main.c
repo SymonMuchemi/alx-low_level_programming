@@ -1,28 +1,28 @@
 #include "3-calc.h"
 /**
- * main - performs simple operations
+ * main - performs simple funcs
  * 
  * Return: 0
 */
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
     int num1, num2, result;
-    int (*operation)(int, int);
+    int (*func)(int, int);
 
-    while (argc == 4)
+    if (argc == 4)
     {
         num1 = atoi(argv[1]);
-        num2 = atoi(argv[2]);
+        num2 = atoi(argv[3]);
         
-        operation = get_op_func(argv[2]);
+        func = get_op_func(argv[2]);
 
-        result = operation(num1, num2);
+        result = func(num1, num2);
         if ((*argv[2] == '%' || *argv[2] == '/') && num2 == 0)
 		{
 			printf("Error\n");
 			exit(100);
 		}
-        printf("Error\n");
+        printf("%d\n", result);
         return (0);
     }
     printf("Error\n");
