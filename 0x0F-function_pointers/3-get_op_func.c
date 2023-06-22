@@ -31,17 +31,3 @@ int (*get_op_func(char *s))(int, int)
     printf("Error\n");
     exit(99);
 }
-/**
- *  - checks input consists of digits
- * @str: string representaion of number
- * Return: numer or 0
-*/
-int checkForDigitsOnly(const char *str) {
-    int num = atoi(str);
-    
-    if (num == 0 && str[0] != '0')
-        return 0; 
-
-    
-    return 1;
-}
