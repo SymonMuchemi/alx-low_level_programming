@@ -1,15 +1,5 @@
 #include "variadic_functions.h"
 /**
- * struct op - struct for 3
- * @c: character to check
- * @f: function to point to
- */
-typedef struct op
-{
-	char *c;
-	int (*f)(va_list a);
-} printer;
-/**
  * print_c - prints char
  * @a: list to give
  * Return: always 0
