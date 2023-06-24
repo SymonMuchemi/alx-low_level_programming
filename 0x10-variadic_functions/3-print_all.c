@@ -54,6 +54,8 @@ int print_s(va_list a)
  */
 void print_all(const char * const format, ...)
 {
+	/* ceif */
+	/* ic*/
 	int i, j;
 	char *sep = "";
 	char *sep2 = ", ";
@@ -65,7 +67,7 @@ void print_all(const char * const format, ...)
 		{"f", print_f},
 		{NULL, NULL}
 	};
-
+/*i = 0, j = 0*/
 	va_start(anyArgs, format);
 	i = 0;
 	while (format != NULL && format[i])
