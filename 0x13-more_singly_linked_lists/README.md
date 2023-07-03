@@ -121,7 +121,7 @@ julien@ubuntu:~/0x13. More singly linked lists$
 - Directory: `0x13-more_singly_linked_lists`
 - File: `1-listint_len.c`
 
-## 2.Add node
+## 2. Add node
 Write a function that adds a new node at the beginning of a `listint_t` list.
 
 Prototype: `listint_t *add_nodeint(listint_t **head, const int n);`
@@ -223,7 +223,7 @@ julien@ubuntu:~/0x13. More singly linked lists$
 - Directory: `0x13-more_singly_linked_lists`
 - File: `3-add_nodeint_end.c`
 
-## 4.Free list
+## 4. Free list
 Write a function that frees a `listint_t` list.
 
 Prototype: `void free_listint(listint_t *head);`
@@ -289,7 +289,7 @@ julien@ubuntu:~/0x13. More singly linked lists$
 - Directory: `0x13-more_singly_linked_lists`
 - File: `4-free_listint.c`
 
-## 5.Free
+## 5. Free
 Write a function that frees a `listint_t` list.
 
 Prototype: `void free_listint2(listint_t **head);`
@@ -357,7 +357,7 @@ julien@ubuntu:~/0x13. More singly linked lists$
 - Directory: `0x13-more_singly_linked_lists`
 - File: `5-free_listint2.c`
 
-## 6.Pop
+## 6. Pop
 Write a function that deletes the head node of a `listint_t` linked list, and returns the head node’s data (n).
 
 - Prototype: `int pop_listint(listint_t **head);`
@@ -513,7 +513,7 @@ julien@ubuntu:~/0x13. More singly linked lists$
 - Directory: `0x13-more_singly_linked_lists`
 - File: `7-get_nodeint.c`
 
-## 8.Sum list
+## 8. Sum list
 Write a function that returns the sum of all the data (n) of a `listint_t` linked list.
 
 - Prototype: `int sum_listint(listint_t *head);`
