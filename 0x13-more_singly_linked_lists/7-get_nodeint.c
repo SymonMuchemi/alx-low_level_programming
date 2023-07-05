@@ -18,10 +18,9 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
         if (count == index)
             return (head);
 
-        if (count > index)
-            return (NULL);
-        
         head = head->next;
         count++;
     }
+
+    return (NULL);
 }
