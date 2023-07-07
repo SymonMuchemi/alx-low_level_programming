@@ -18,7 +18,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
     
     while (mxrn)
     {
-        bit = get_bit(mxrn, 0);
+        bit = mxrn & 1;
         if (bit == 1)
             count++;
         
