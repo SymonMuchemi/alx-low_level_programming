@@ -6,9 +6,9 @@
 int get_endianness(void)
 {
 	char *c;
-    int bit = 1;
+	int bit = 1;
 
-	c = (char *) & bit;
+	c = (char *) &bit;
 
 	return ((int)*c);
 }
