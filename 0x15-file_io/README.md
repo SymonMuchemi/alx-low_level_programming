@@ -111,7 +111,7 @@ julien@ubuntu:~/0x15. File descriptors and permissions$
 - Directory: `0x15-file_io`
 - File: `0-read_textfile.c`
 
-# 1. Under the snow
+### 1. Under the snow
 Create a function that creates a file.
 
 - Prototype: `int create_file(const char *filename, char *text_content);`
@@ -160,7 +160,7 @@ worldjulien@ubuntu:~/0x15. File descriptors and permis$
 - Directory: `0x15-file_io`
 - File: `1-create_file.c`
 
-# 2. Speak gently, she can hear
+### 2. Speak gently, she can hear
 Write a function that appends text at the end of a file.
 
 - Prototype: `int append_text_to_file(const char *filename, char *text_content);`
@@ -210,7 +210,7 @@ julien@ubuntu:~/0x15. File descriptors and permissions$
 - Directory: `0x15-file_io`
 - File: `2-append_text_to_file.c`
 
-# 3. cp
+### 3. cp
 Write a program that copies the content of a file to another file.
 
 - Usage: cp file_from file_to
