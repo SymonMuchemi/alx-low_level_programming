@@ -11,7 +11,7 @@ int create_file(const char *filename, char *text_content)
     int fd, len = 0;
     ssize_t written;
 
-    if (filename == NULL)
+    if (filename == NULL || text_content == NULL)
         return (-1);
 
     /*Get length of string*/
