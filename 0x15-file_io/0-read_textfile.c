@@ -11,19 +11,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
     ssize_t bytesRead, bytesWritten;
     char buffer[BUFFSIZE];
 
+    if (filename == NULL)
+        return (0);
+    
     fd = open(filename, O_RDONLY);
-
-    if (fd < 0)
-        return (0);
-    
     bytesRead = read(fd, buffer, letters);
-
-    if (bytesRead < 0)
-        return (0);
-    
     bytesWritten = write(STDOUT_FILENO, buffer, bytesRead);
 
-    if (bytesWritten < 0)
+    if (bytesWritten == -1 || bytesRead == -1 || fd == -1)
         return (0);
 
     close(fd);
