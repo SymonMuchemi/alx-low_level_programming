@@ -25,6 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
     if (bytesWritten == -1 || bytesRead == -1 || fd == -1)
         return (0);
 
+    frea(buffer);
     close(fd);
 
     return (bytesWritten);
