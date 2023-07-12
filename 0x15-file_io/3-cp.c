@@ -55,28 +55,28 @@ int main(int argc, char *argv[])
     ssize_t bytesWritten, bytesRead;
     mode_t permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
-
     if (argc != 3)
-    {
-        dprintf(STDOUT_FILENO, "Usage: cp file_from file_to");
-        exit(97);
-    }
+        dprintf(STDOUT_FILENO, "Usage: cp file_from file_to"), exit(97);
     
     from_fd = open(argv[1], O_RDONLY);
-    bytesRead = read(from_fd, buff, 1024);
-
-    if (bytesRead == -1 || from_fd == -1)
-    {
-        dprintf(STDOUT_FILENO, "Error: Can't read from file %s", argv[1]);
-        exit(98);
-    }
-
     to_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, permissions);
-    bytesWritten = write(to_fd, buff, bytesRead);
-    if (bytesWritten == -1 || to_fd == -1)
+    if (from_fd == -1)
+        dprintf(STDOUT_FILENO, "Error: Can't read from file %s", argv[1]), exit(98);
+    if (to_fd == -1)
+        dprintf(STDOUT_FILENO, "Error: Can't write to %s", argv[2]), exit(99);
+    bytesRead = 1;
+    while(bytesRead)
     {
-        dprintf(STDOUT_FILENO, "Error: Can't write to %s", argv[2]);
-        exit(99);
+        bytesWritten = 
+        bytesRead = read(from_fd, buff, 1024);
+        if (bytesRead == -1)
+            dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+        if (bytesRead > 0)
+        {
+            bytesWritten = write(to_fd, buff, bytesRead);
+            if (bytesWritten != bytesRead || bytesWritten == -1)
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+        }
     }
     
     free(buff);
