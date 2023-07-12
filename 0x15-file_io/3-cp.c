@@ -53,7 +53,7 @@ void _cp(char *file_from, char *file_to)
     char *buff = create_buf(file_to);
     ssize_t bytesWritten, bytesRead;
 
-    if (!file_from)
+    if (file_from == NULL)
         exit(98);
     
     from_fd = open(file_from, O_RDONLY);
@@ -65,7 +65,7 @@ void _cp(char *file_from, char *file_to)
         exit(98);
     }
 
-    to_fd = open(file_to, O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+    to_fd = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
     bytesWritten = write(to_fd, buff, bytesRead);
     if (bytesWritten == -1 || to_fd == -1)
     {
