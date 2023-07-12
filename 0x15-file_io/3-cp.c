@@ -5,6 +5,43 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 /**
+ * create_buf - Create a buffer object
+ * @filename: name of file
+ * Return: pointer too created buffer or code 99
+ */
+char *create_buf(char *filename)
+{
+    char *buffer;
+
+    buffer = malloc(sizeof(char) * 1024);
+    if (buffer == NULL)
+    {
+        dprintf(STDERR_FILENO,
+			"Error: Can't write to %s\n", filename);
+		exit(99);
+    }
+
+    return (buffer);
+}
+/**
+ * close_file - close a file and handles any exception
+ * that may occur
+ * @fd: file descriptor
+ * Return: Null
+ */
+void close_file(int fd)
+{
+	int c;
+
+	c = close(fd);
+
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+/**
  * _cp - copies file contents of one file to another
  * @file_from: file to copy content from
  * @file_to: file to paste content to
@@ -13,7 +50,7 @@
 void _cp(char *file_from, char *file_to)
 {
     int from_fd, to_fd;
-    char *buff[1024];
+    char *buff = create_buf(file_to);
     ssize_t bytesWritten, bytesRead;
 
     if (!file_from)
@@ -35,17 +72,10 @@ void _cp(char *file_from, char *file_to)
         dprintf(STDOUT_FILENO, "Error: Can't write to %s", file_from);
         exit(99);
     }
-    if(close(from_fd) == -1)
-    {
-        dprintf(STDOUT_FILENO, "Error: Can't close fd %d", from_fd);
-        exit(100);
-    }
-
-    if(close(to_fd) == -1)
-    {
-        dprintf(STDOUT_FILENO, "Error: Can't close fd %d", to_fd);
-        exit(100);
-    }
+    
+    free(buff);
+    close_file(to_fd);
+    close_file(from_fd);
 }
 /**
  * main -  program that copies the content of 
