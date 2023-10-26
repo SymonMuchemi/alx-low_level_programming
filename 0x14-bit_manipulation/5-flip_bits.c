@@ -7,8 +7,8 @@
 */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int xor;
-	int count = 0;
+	unsigned long int xor;
+	unsigned long int count = 0;
 
 	xor = n ^ m;
 
