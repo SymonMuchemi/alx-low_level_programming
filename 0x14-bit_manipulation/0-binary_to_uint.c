@@ -17,18 +17,13 @@ unsigned int binary_to_uint(const char *b)
 	string_length = strlen(b);
 	for (i = string_length - 1; i >= 0; i--)
 	{
-		if (b[i] == '0')
-		{
-			decimal += 0;
-			weight *= 2;
-		}
-		else if (b[i] == '1')
-		{
-			decimal += weight;
-			weight *= 2;
-		}
-		else
+		if (b[i] != '1' || b[i] != '0')
 			return (0);
+
+		if (b[i] == '1')
+			decimal += weight;
+
+		weight *= 2;
 	}
 
 	return (decimal);
