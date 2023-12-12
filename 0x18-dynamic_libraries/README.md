@@ -1,6 +1,7 @@
 # 0x18. C - Dynamic libraries
 
 This repository is a part of my learning journey in understaing the following about dynamic libraries in C as implemented in Unix operating systems:
+
     - what a dynamic library is
     - how a dynamic library is created
     - how a dynamic library is used
