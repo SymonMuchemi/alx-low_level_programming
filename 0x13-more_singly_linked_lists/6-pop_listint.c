@@ -13,18 +13,11 @@ int pop_listint(listint_t **head)
 	if (!head || !(*head))
 		return (0);
 
-	temp = (*head)->next;
+	temp = *head;
 	headData = (*head)->n;
+	*head = (*head)->next;
 
-	/* if list has only one node*/
-	if (!temp)
-		return (headData);
-
-	free(*head);
-
-	/* set new head to be temp*/
-	*head = temp;
+	free(temp);
 
 	return (headData);
-
 }
