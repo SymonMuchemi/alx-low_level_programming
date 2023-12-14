@@ -5,50 +5,34 @@
  * @head: pointer to the head node
  * @index: position of node to be deleted
  * Return: 1 on success, -1 on failure
-*/
+ */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *temp, *current;
+	listint_t *current = *head, *temp = NULL;
 	unsigned int i = 0;
 
-	/* if list is empty*/
-	if (!(*head) || !(head))
+	if (head == NULL || *head == NULL)
 		return (-1);
 
-	temp = (*head);
-
-	/* if list has only one node*/
-	if (!(temp->next))
+	if (index == 0)
 	{
-		if (index == 0)
-		{
-			free(temp);
-			return (1);
-		}
-		return (-1);
-	}
-
-	/* deletion at index 0*/
-	if ((index == 0) && ((*head) || head))
-	{
-		current = *head;
 		*head = (*head)->next;
 		free(current);
 		return (1);
 	}
 
-	while (temp->next)
+	while (current != NULL && i < index - 1)
 	{
-		if (i == (index - 1))
-		{
-			current = temp->next;
-			temp->next = temp->next->next;
-			free(current);
-			return (1);
-		}
-		temp = temp->next;
+		current = current->next;
 		i++;
 	}
 
-	return (-1);
+	if (current == NULL || current->next == NULL)
+		return (-1);
+
+	temp = current->next;
+	current->next = temp->next;
+	free(temp);
+
+	return (1);
 }
