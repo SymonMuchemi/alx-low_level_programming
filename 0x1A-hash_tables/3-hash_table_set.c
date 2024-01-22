@@ -22,7 +22,7 @@ void free_node(hash_node_t *node)
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned int index;
+	unsigned int index = 0;
 	hash_node_t *new_node, *current;
 
 	if (strcmp(key, "") == 0 || ht == NULL || strcmp(value, "") == 0)
