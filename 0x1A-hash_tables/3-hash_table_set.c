@@ -14,65 +14,57 @@ void free_node(hash_node_t *node)
 }
 
 /**
- * hash_table_set - adds an element to the hash table
- * @ht: the hash table
- * @key: the key string, unique to each element
- * @value: the value to be referenced by the key
- * Return: 1 on success or 0 otherwise
-*/
+ * hash_table_set - Set a value in the hash table.
+ * @ht: Hash table.
+ * @key: Key to be indexed.
+ * @value: Value to set in the hash table.
+ *
+ * Return: 1 if works, 0 if doesn't.
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned int index = 0;
+	unsigned long int index = 0;
 	hash_node_t *new_node, *current;
 
-	if (strcmp(key, "") == 0 || ht == NULL || strcmp(value, "") == 0)
-	{
+	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
 		return (0);
-	}
+
+	index = key_index((const unsigned char *)key, ht->size);
 
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
 
-	/* populate data to the new node*/
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
+	new_node->key = strdup((char *)key);
+	new_node->value = strdup((char *)value);
 	new_node->next = NULL;
 
 	if (ht->array[index] == NULL)
-	{
 		ht->array[index] = new_node;
-		return (1);
-	}
-
-	/* incase of a collision */
-	current = ht->array[index];
-
-	/* if the keys are the same, replace nodes*/
-	if (strcmp(ht->array[index]->key, key) == 0)
+	else
 	{
-		new_node->next = current->next;
-		ht->array[index] = new_node;
-		free_node(current);
-		return (1);
+		current = ht->array[index];
+		if (strcmp(current->key, key) == 0)
+		{
+			new_node->next = current->next;
+			ht->array[index] = new_node;
+			free_node(current);
+			return (1);
+		}
+		while (current->next != NULL && strcmp(current->next->key, key) != 0)
+		{ current = current->next;
+		}
+		if (strcmp(current->key, key) == 0)
+		{
+			new_node->next = current->next->next;
+			free_node(current->next);
+			current->next = new_node;
+		}
+		else
+		{
+			new_node->next = ht->array[index];
+			ht->array[index] = new_node;
+		}
 	}
-
-	/* search for node with same key in the index*/
-	while (current->next != NULL && strcmp(current->next->key, key) != 0)
-	{
-		current = current->next;
-	}
-
-	/* if node with same key is found, replace*/
-	if (strcmp(current->key, key) == 0)
-	{
-		new_node->next = current->next->next;
-		free_node(current->next);
-		current->next = new_node;
-		return (1);
-	}
-
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
 	return (1);
 }
