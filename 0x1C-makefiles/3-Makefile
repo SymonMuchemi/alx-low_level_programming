@@ -17,4 +17,7 @@ oclean:
 	$(RM) *~ $(OBJ)
 
 # uses clean and oclean rules
-fclean: oclean clean
+fclean: clean oclean
+
+# cleans the project the rebuilds it
+re: fclean all
