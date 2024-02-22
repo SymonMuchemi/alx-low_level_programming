@@ -3,10 +3,11 @@ SRC = school.c main.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # builds the executable
 all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 # deletes all emac and VIM temporary files along with the executable
 clean:
