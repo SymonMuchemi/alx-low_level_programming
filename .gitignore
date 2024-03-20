@@ -4,3 +4,4 @@ test*
 compile*
 Requiescat
 main.c
+temp_dir/
