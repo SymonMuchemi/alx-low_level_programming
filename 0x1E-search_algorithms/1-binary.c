@@ -51,5 +51,5 @@ void print_subarray(int arr[], int left, int right)
 	printf("Searching in array: ");
 	for (i = left; i < right; i++)
 		printf("%d, ", arr[i]);
-	printf("%d\n", i);
+	printf("%d\n", arr[i]);
 }
